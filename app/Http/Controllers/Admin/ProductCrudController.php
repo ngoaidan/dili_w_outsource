@@ -281,6 +281,7 @@ class ProductCrudController extends CrudController
 
 	public function store(StoreRequest $request)
 	{
+
 		// your additional operations before save here
         if($request->file('images'))
         {
@@ -296,8 +297,7 @@ class ProductCrudController extends CrudController
             }
         }
         }
-
-        $this->request->request->set('img', $image->filename);
+//        $this->request->request->set('img', $image->filename);
 
   // your additional operations before save here
         // $this->crud->setColumnDetails('img', ['value' => $image->filename]);

@@ -38,7 +38,7 @@ class ProductCrudController extends CrudController
         // ------ CRUD COLUMNS
         $this->crud->addColumn([
             'name' => 'name',
-            'label' => 'Name',
+            'label' => 'Name (*)',
         ]);
         $this->crud->addColumn([
             'name' => 'slug',
@@ -63,7 +63,7 @@ class ProductCrudController extends CrudController
         ]);
         $this->crud->addColumn([
             'name' => 'price',
-            'label' => 'Price',
+            'label' => 'Price (*)',
         ]);
         $this->crud->addColumn([
             'name' => 'old_price',
@@ -93,7 +93,7 @@ class ProductCrudController extends CrudController
         ]);
         $this->crud->addField([    // TEXT
             'name' => 'price',
-            'label' => 'Product Price',
+            'label' => 'Product Price (*)',
             'type' => 'number',
             // optionals
             'prefix' => "VND",
@@ -115,7 +115,7 @@ class ProductCrudController extends CrudController
         ]);
         $this->crud->addField([
             'name' => 'name',
-            'label' => 'Name',
+            'label' => 'Name (*)',
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6'
             ],
@@ -157,13 +157,13 @@ class ProductCrudController extends CrudController
 
         $this->crud->addField([    // TEXT
             'name' => 'meta_title',
-            'label' => 'Tiêu đề sản phẩm',
+            'label' => 'Tiêu đề sản phẩm (*)',
             'type' => 'text',
             'placeholder' => 'Your meta title here',
         ]);
         $this->crud->addField([    // TEXT
             'name' => 'ml',
-            'label' => 'Thể tích',
+            'label' => 'Đơn vị (gr) (*)',
             'type' => 'text',
             'placeholder' => 'Your meta title here',
         ]);
@@ -181,7 +181,7 @@ class ProductCrudController extends CrudController
         ]);
         $this->crud->addField([   // WYSIWYG
             'name' => 'description',
-            'label' => 'Category Description',
+            'label' => 'Category Description (*)',
             'type' => 'ckeditor',
             'placeholder' => 'Your meta description here',
         ]);
@@ -208,7 +208,7 @@ class ProductCrudController extends CrudController
 
         $this->crud->addField([    // Image
                                 'name' => 'img',
-                                'label' => 'Image',
+                                'label' => 'Image (*)',
                                 'type' => 'browse',
                             ]);
 

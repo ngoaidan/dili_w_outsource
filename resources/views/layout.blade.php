@@ -60,10 +60,17 @@
                       <nav id="nav-menu-container">
                         <ul class="nav-menu">
                           <li class="menu-active"><a href="{{$mainMenuURL}}#home">Home</a></li>
+                            <li class="menu-has-children"><a href="{{$mainMenuURL}}#blog">Dịch vụ</a>
+                                <ul style="display: none;">
+                                    @foreach($articles as $article)
+                                        <li><a href="{{url('')}}/post&slug={{$article->slug}}">{{$article->title}}</a></li>
+
+                                    @endforeach
+                                </ul>
+                            </li>
                           <li><a href="{{$mainMenuURL}}#about">Cam kết</a></li>
                           <li><a href="{{$mainMenuURL}}#coffee">Sản phẩm</a></li>
                           <li><a href="{{$mainMenuURL}}#review">Review</a></li>
-                          <li><a href="{{$mainMenuURL}}#blog">Thông tin</a></li>
                           <li><a href="{{$mainMenuURL}}#address">Liên hệ</a></li>
                           <!-- <li class="menu-has-children"><a href="">Pages</a>
                             <ul>

@@ -12,6 +12,12 @@ use DB;
 
 class PageController extends Controller
 {
+    function __construct(){
+        $this->data['articles'] = DB::select('SELECT `id`, `title`, `slug`, `image`, `intro` 
+                                     FROM `articles`  
+                                    WHERE 1'
+        );
+    }
     public function index($slug)
     {
         $page = Page::findBySlug($slug);
@@ -43,10 +49,7 @@ class PageController extends Controller
         foreach ($settings as $value) {
             $this->data[$value->key] = $value->value;
         }
-        $this->data['articles'] = DB::select('SELECT `id`, `title`, `slug`, `image`, `intro` 
-                                     FROM `articles`  
-                                    WHERE 1'
-                                    );
+
         
         return view('pages.'.$page->template, $this->data);
     }
@@ -157,7 +160,45 @@ class PageController extends Controller
         foreach ($settings as $value) {
             $this->data[$value->key] = $value->value;
         }
-       
+        return view('pages.'.$page->template, $this->data);
+    }
+
+    public function service($slug){
+        $page = Page::findBySlug('post');
+
+        if (!$page)
+        {
+            abort(404, 'Please go back to our <a href="'.url('').'">homepage</a>.');
+        }else{
+            //tao menu doi voi page 1 trang
+            if ($page->template=="home") {
+                $this->data['mainMenuURL'] = '';
+            }else{
+                $this->data['mainMenuURL'] = url('');
+            }
+        }
+
+        $post = DB::select('SELECT * 
+                                     FROM `articles`  
+                                    WHERE `slug` = ? ', [$slug]
+        );
+
+        if (!$post)
+        {
+            abort(404, 'Không tìm thấy sản phẩm! <a href="'.url('').'">homepage</a>.');
+        }else{
+            $this->data['post'] = $post[0];
+        }
+
+        $this->data['title'] = $page->title;
+        $this->data['page'] = $page->withFakes();
+        //setting
+        $settings = Setting::all();
+        foreach ($settings as $value) {
+            $this->data[$value->key] = $value->value;
+        }
+
+
         return view('pages.'.$page->template, $this->data);
     }
 

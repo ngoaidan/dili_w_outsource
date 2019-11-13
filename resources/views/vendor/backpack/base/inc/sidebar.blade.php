@@ -27,11 +27,11 @@
               <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/page') }}"><i class="fa fa-file-o"></i> <span>Pages</span></a></li>
               <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/home-images') }}"><i class="fa fa-image"></i> <span>Home images</span></a></li>
               <li class="treeview">
-                <a href="#"><i class="fa fa-newspaper-o"></i> <span>News</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class="fa fa-newspaper-o"></i> <span>Dịch vụ</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/article') }}"><i class="fa fa-newspaper-o"></i> <span>Articles</span></a></li>
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/article-category') }}"><i class="fa fa-list"></i> <span>Categories</span></a></li>
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/article-tag') }}"><i class="fa fa-tag"></i> <span>Tags</span></a></li>
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/article') }}"><i class="fa fa-newspaper-o"></i> <span>Quản lý dịch vụ</span></a></li>
+{{--                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/article-category') }}"><i class="fa fa-list"></i> <span>Categories</span></a></li>--}}
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/article-tag') }}"><i class="fa fa-tag"></i> <span>Thêm Tags (SEO)</span></a></li>
                 </ul>
               </li>
               <li class="treeview">

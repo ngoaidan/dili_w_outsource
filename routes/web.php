@@ -33,6 +33,8 @@ Route::get('/san-pham&slug={slug}', 'PageController@product');
 Route::get('/post&slug={slug}', 'PageController@post');
 Route::get('/bang-bao-gia-si-cafe', 'PageController@PriceList');
 
+Route::get('/dich-vu/{slug}', 'PageController@service');
+
 /** CATCH-ALL ROUTE for Backpack/PageManager - needs to be at the end of your routes.php file  **/
 Route::get('{page}/{subs?}', ['uses' => 'PageController@index'])
     ->where(['page' => '^((?!admin).)*$', 'subs' => '.*']);

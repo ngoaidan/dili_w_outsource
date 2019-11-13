@@ -9,7 +9,7 @@
     table tbody th, td{
             text-align: center !important;
     }
-}
+
 </style>
             
 

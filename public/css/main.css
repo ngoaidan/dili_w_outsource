@@ -2749,3 +2749,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 .switch-wrap p {
   margin: 0;
 }
+
+.post-content ul li{
+  list-style-type: square;
+  margin-left: 38px;
+}

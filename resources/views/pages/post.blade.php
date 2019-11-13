@@ -15,7 +15,7 @@
                     <h3 class="about-title mb-30" style="color: #b68834;">{{$post->title}}</h3>
                     <hr>
                     <div class="row">
-                        <div class="col-md-10 offset-md-1">
+                        <div class="post-content col-md-10 offset-md-1">
                             <div class="img-text" style="padding: 10px 0px">
                                 {!! $post->content !!}
                             </div>
